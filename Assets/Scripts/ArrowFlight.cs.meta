@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 48b28c774ecc33f4e8eaecd6befd7772
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - deadEnemy: {fileID: 843965659808239703, guid: e87b4f378ee5b344aa95954d309a0ef5, type: 3}
+  - deadArrow: {fileID: 3816795791121328880, guid: 22e6fd669201dcc4083853f068d7878a, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
