@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour
     float forwardMove;
     float sidewaysMove;
     Vector3 velocity;
+    //Vector3 velocity2;
+    //Vector3 groundnormal;
     public float jumpForce;
     private bool canShoot;
     float arrowReloadTime;
@@ -31,7 +33,8 @@ public class PlayerController : MonoBehaviour
         }
 
         velocity = new Vector3(sidewaysMove, 0, forwardMove);
-
+        //groundnormal = GetGroundNormal();
+        //velocity = Vector3.ProjectOnPlane(velocity, groundnormal);
         // switches from local space to global
         velocity = transform.TransformDirection(velocity);  
         velocity *= speed;
