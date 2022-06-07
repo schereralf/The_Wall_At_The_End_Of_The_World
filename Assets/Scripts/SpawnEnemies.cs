@@ -35,7 +35,9 @@ public class SpawnEnemies : MonoBehaviour
         if (enemyCount == 0 && gameManager.playerCamera.enabled)
         {
             waveNumber++;
+            Debug.Log(waveNumber);
             actualWave = Mathf.Min(waveNumber*gameManager.walkabout, 6);
+            Debug.Log(actualWave);  
             SpawnEnemyWave(actualWave);
             gameManager.UpdateScore(score, actualWave);
         }
@@ -55,7 +57,7 @@ public class SpawnEnemies : MonoBehaviour
         Vector3 GenerateSpawnPos()
         {
             float spawnPosX = Random.Range(-spawnRangeX, spawnRangeX);
-            Vector3 randomPos = new Vector3(spawnPosX, 5, spawnPosZ);
+            Vector3 randomPos = new Vector3(spawnPosX, 7, spawnPosZ);
             return randomPos;
         }
 
