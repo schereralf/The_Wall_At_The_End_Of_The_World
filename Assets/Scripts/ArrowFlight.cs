@@ -30,6 +30,8 @@ public class ArrowFlight : MonoBehaviour
             Instantiate(deadEnemy, col.gameObject.transform.position, col.gameObject.transform.rotation);
             gameObject.SetActive(false);
 
+
+
             Destroy(col.gameObject);
         }
         if (col.gameObject.CompareTag("Ground"))
