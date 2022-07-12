@@ -22,7 +22,7 @@ public class TheWallGameManager : MonoBehaviour
     private string maxScorer3;
     private int maxScore4=0;
     private string maxScorer4;
-
+    private bool filled;
     private string playerID;
     public TMP_InputField inputField;
     public TextMeshProUGUI Scorer1;
@@ -56,6 +56,7 @@ public class TheWallGameManager : MonoBehaviour
 
         foreach (ScoreData item in namesList)
         {
+            filled = false;
             if (item.PlayerScore > maxScore1)
             {
                 maxScore4 = maxScore3; maxScorer4 = maxScorer3;
@@ -63,24 +64,28 @@ public class TheWallGameManager : MonoBehaviour
                 maxScore2 = maxScore1; maxScorer2 = maxScorer1;
                 maxScore1 = item.PlayerScore;
                 maxScorer1 = item.Player;
+                filled = true;
             }
-            else if (item.PlayerScore > maxScore2)
+            else if (item.PlayerScore > maxScore2 && !filled)
             {
                 maxScore4 = maxScore3; maxScorer4 = maxScorer3;
                 maxScore3 = maxScore2; maxScorer3 = maxScorer2;
                 maxScore2 = item.PlayerScore;
                 maxScorer2 = item.Player;
+                filled = true;
             }
-            else if (item.PlayerScore > maxScore3)
+            else if (item.PlayerScore > maxScore3 && !filled)
             {
                 maxScore4 = maxScore3; maxScorer4 = maxScorer3;
                 maxScore3 = item.PlayerScore;
                 maxScorer3 = item.Player;
+                filled = true;
             }
-            else if (item.PlayerScore > maxScore4)
+            else if (item.PlayerScore > maxScore4 && !filled)
             {
                 maxScore4 = item.PlayerScore;
                 maxScorer4 = item.Player;
+                filled = true;
             }
         }
 
@@ -111,13 +116,9 @@ public void AddNewPlayer()
     public void Exit()
     {
 #if UNITY_EDITOR
-
         EditorApplication.ExitPlaymode();
-#else
-        Instance.Exit();
-        Application.Quit();
-
 #endif
+        Application.Quit();
     }
 
     // Serializable section.  Key is that the struct for the player+score data and its two variables are serializable,
@@ -137,7 +138,7 @@ public void AddNewPlayer()
 
     public void LoadNames()
     {
-        string path = Application.persistentDataPath + "/savefile.json";
+        string path = Application.persistentDataPath + "/savethewallfile.json";
         if (File.Exists(path))
         {
             string json = File.ReadAllText(path);
@@ -157,7 +158,7 @@ public void AddNewPlayer()
         Debug.Log(Application.persistentDataPath);
 
         // Saving json copy of savedList in generic directory
-        File.WriteAllText(Application.persistentDataPath + "/savefile.json", json);
+        File.WriteAllText(Application.persistentDataPath + "/savethewallfile.json", json);
     }
 }
 
