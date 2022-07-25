@@ -7,12 +7,6 @@ public class MouseLook : MonoBehaviour
     public Transform playerBody;
     float xRotation = 0f;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        //Cursor.lockState = CursorLockMode.Locked;
-    }
-
     // Update is called once per frame - this just deals with camera view and how it responds to mouse movements.
     void Update()
     {

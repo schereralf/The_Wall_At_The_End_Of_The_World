@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
     private float horizontalInput;
     private float forwardInput;
     public CharacterController controller;
-    private Vector3 move;
+    public Vector3 move;
     private Vector3 velocity;
     public float gravity = -9.81f;
     public Transform groundCheck;
@@ -49,7 +49,7 @@ public class Player : MonoBehaviour
 
         if (Input.GetMouseButton(0) && canShoot)
         {
-            arrowReloadTime = Time.time + 0.2f;
+            arrowReloadTime = Time.time + 0.3f;
             canShoot = false;
             // get object from the pool
             GameObject pooledProjectile = ObjectPooler.SharedInstance.GetPooledObject();

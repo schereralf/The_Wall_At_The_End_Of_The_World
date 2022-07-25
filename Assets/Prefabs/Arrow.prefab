@@ -129,6 +129,14 @@ MonoBehaviour:
   speed: 40
   deadEnemy: {fileID: 843965659808239703, guid: e87b4f378ee5b344aa95954d309a0ef5, type: 3}
   deadArrow: {fileID: 3816795791121328880, guid: 22e6fd669201dcc4083853f068d7878a, type: 3}
+  source: {fileID: 1759700029171266091, guid: e87b4f378ee5b344aa95954d309a0ef5, type: 3}
+  enemyScreams:
+  - {fileID: 8300000, guid: 95165564f212043e0ad4f202bba4b2fb, type: 3}
+  - {fileID: 8300000, guid: 843093b401e764d319927478c8e6a842, type: 3}
+  - {fileID: 8300000, guid: bba4f213306eb4166875d0e89553d69e, type: 3}
+  - {fileID: 8300000, guid: 59459e88b1e2e43d693e414baba215b2, type: 3}
+  - {fileID: 8300000, guid: 9495f46d03e414c43a3369a47270c789, type: 3}
+  - {fileID: 8300000, guid: 007ff031ad4084bccb2b2360f1af1682, type: 3}
 --- !u!82 &5018730445596928699
 AudioSource:
   m_ObjectHideFlags: 0

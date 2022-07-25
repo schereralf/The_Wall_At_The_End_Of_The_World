@@ -1,4 +1,5 @@
 
+using System.Collections.Generic;
 using UnityEngine;
 
 public class ArrowFlight : MonoBehaviour
@@ -7,11 +8,6 @@ public class ArrowFlight : MonoBehaviour
     public GameObject deadEnemy;
     public GameObject deadArrow;
     private readonly float lowerLimit=-10f;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
 
     // Update is called once per frame
     void Update()
@@ -29,9 +25,6 @@ public class ArrowFlight : MonoBehaviour
         {
             Instantiate(deadEnemy, col.gameObject.transform.position, col.gameObject.transform.rotation);
             gameObject.SetActive(false);
-
-
-
             Destroy(col.gameObject);
         }
         if (col.gameObject.CompareTag("Ground"))
