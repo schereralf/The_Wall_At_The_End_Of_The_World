@@ -30,7 +30,7 @@ public class FootstepManager : MonoBehaviour
 
         if (footstepTimer <= 0)
         {
-            if(Physics.Raycast(mainCamera.transform.position, Vector3.down, out RaycastHit hit,3,groundLayerMask))
+            if(Physics.Raycast(mainCamera.transform.position, Vector3.down, out RaycastHit hit,4,groundLayerMask))
             {
                 switch (hit.collider.tag)
                 {

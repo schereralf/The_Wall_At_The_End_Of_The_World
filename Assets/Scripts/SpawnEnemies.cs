@@ -57,7 +57,7 @@ public class SpawnEnemies : MonoBehaviour
         Vector3 GenerateSpawnPos()
         {
             float spawnPosX = Random.Range(-spawnRangeX, spawnRangeX);
-            Vector3 randomPos = new Vector3(spawnPosX, 7, spawnPosZ);
+            Vector3 randomPos = new Vector3(spawnPosX, 6, spawnPosZ);
             return randomPos;
         }
 
