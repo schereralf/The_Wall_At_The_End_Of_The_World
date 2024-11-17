@@ -6,12 +6,14 @@ public class SpawnEnemies : MonoBehaviour
     public GameObject[] enemyPrefabs;
     private readonly float spawnRangeX = 10f;
     private readonly float spawnPosZ = 100f;
+    private readonly int maxWaves=6;
 
     public int enemyCount;
     private int lastEnemyCount;
     private int actualWave;
     public int waveNumber;
     public int score;
+
     private GameManager gameManager;
     bool trip = false;
 
@@ -35,9 +37,7 @@ public class SpawnEnemies : MonoBehaviour
         if (enemyCount == 0 && gameManager.playerCamera.enabled)
         {
             waveNumber++;
-            Debug.Log(waveNumber);
-            actualWave = Mathf.Min(waveNumber*gameManager.walkabout, 6);
-            Debug.Log(actualWave);  
+            actualWave = Mathf.Min(waveNumber*gameManager.walkabout, maxWaves); 
             SpawnEnemyWave(actualWave);
             gameManager.UpdateScore(score, actualWave);
         }
@@ -49,6 +49,10 @@ public class SpawnEnemies : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Return))
         {
             gameManager.GameOver();
+        }
+        if (waveNumber > maxWaves)
+        {
+            gameManager.GameTransition_1();
         }
 
         lastEnemyCount = enemyCount; 

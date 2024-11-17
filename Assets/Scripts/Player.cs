@@ -34,7 +34,7 @@ public class Player : MonoBehaviour
         horizontalInput = Input.GetAxis("Horizontal");
         forwardInput = Input.GetAxis("Vertical");
 
-        // Move the player Forward  
+        // Move the player forward  
 
         move = transform.right * horizontalInput + transform.forward * forwardInput;
         controller.Move(speed * Time.deltaTime * move);

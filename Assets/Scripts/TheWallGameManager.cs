@@ -155,7 +155,7 @@ public void AddNewPlayer()
         };
 
         string json = JsonUtility.ToJson(data);
-        Debug.Log(Application.persistentDataPath);
+        //Debug.Log(Application.persistentDataPath);
 
         // Saving json copy of savedList in generic directory
         File.WriteAllText(Application.persistentDataPath + "/savethewallfile.json", json);
